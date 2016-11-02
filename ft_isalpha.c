@@ -10,19 +10,11 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_str_is_alpha(char *str)
-{
-	int i;
+#include "libft.h"
 
-	i = 0;
-	while (str[i] != '\0')
-	{
-		if (str[i] >= 'a' && str[i] <= 'z')
-			i++;
-		else if (str[i] >= 'A' && str[i] <= 'Z')
-			i++;
-		else
-			return (0);
-	}
-	return (1);
+int	ft_isalpha(int c)
+{
+	if (ft_islower(c) != 0 || ft_isupper(c) != 0)
+		return (c);
+	return (0);
 }

@@ -12,8 +12,8 @@
 
 NAME	= libft.a
 CC		= gcc
-CFLAGS	= -Wall -Wextra -Werror
-FILES	= ft_putchar.c ft_putstr.c ft_strcmp.c ft_strlen.c ft_swap.c
+CFLAGS	= -Wall -Wextra -Werror -I "libft.h"
+FILES	= ft_islower.c ft_isupper.c ft_isalpha.c ft_putchar.c ft_putstr.c ft_putnum.c test.c
 
 OBJS = $(addprefix build/, $(FILES:.c=.o))
 
