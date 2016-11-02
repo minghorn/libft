@@ -1,12 +1,14 @@
 #include "libft.h"
 
-void print_num(int n)
+static void print_num(int n)
 {
 	if (n < 0)
 	{
 		ft_putchar('-');
 		n = n * -1;
 	}
+	else if (n == 0)
+		ft_putchar('0');
 	while (n > 0)
 	{
 		ft_putchar((n % 10 + '0'));
