@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-int		is_ok(char c, int str_num, int *ok_ptr)
+static int	is_ok(char c, int str_num, int *ok_ptr)
 {
 	int count;
 
@@ -29,7 +29,7 @@ int		is_ok(char c, int str_num, int *ok_ptr)
 	return (1);
 }
 
-int		ft_atoi(char *str)
+int			ft_atoi(char *str)
 {
 	int str_num;
 	int index;

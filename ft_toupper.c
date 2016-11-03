@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*create_array(int size, char *str)
+static char	*create_array(int size, char *str)
 {
 	char	arr[size + 1];
 	int		in;

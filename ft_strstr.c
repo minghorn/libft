@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-int		matching(char *str, char *to_find, int index)
+static int	matching(char *str, char *to_find, int index)
 {
 	int count;
 	int is_matching;

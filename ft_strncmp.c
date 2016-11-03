@@ -10,17 +10,19 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_strncmp(char *s1, char *s2, unsigned int n)
+#include "libft.h"
+
+int		ft_strncmp(const char *s1, const char *s2, size_t n)
 {
 	unsigned int in;
 
 	in = 0;
-	while (s1[in] != '\0' && s2[in] != '\0' && in < n)
+	while (in < n)
 	{
-		if (s1[in] < s2[in])
-			return (-1);
-		else if (s1[in] > s2[in])
-			return (1);
+		if (s1[in] == '\0' || s2[in] == '\0')
+			return ((unsigned char)s1[in] - (unsigned char)s2[in]);
+		else if (s1[in] != s2[in])
+			return ((unsigned char)s1[in] - (unsigned char)s2[in]);
 		in++;
 	}
 	return (0);

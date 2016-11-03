@@ -17,7 +17,7 @@ static void print_num(int n)
 	ft_putchar('\n');
 }
 
-void ft_putnum(int n)
+void ft_putnbr(int n)
 {
 	int neg = 1;
 	int num = 0;
