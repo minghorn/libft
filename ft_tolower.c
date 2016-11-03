@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*create_array(int size, char *str)
+static char	*create_array(int size, char *str)
 {
 	char	arr[size + 1];
 	int		in;
@@ -29,7 +29,7 @@ char	*create_array(int size, char *str)
 	return (str);
 }
 
-char	*ft_strlowcase(char *str)
+char	*ft_tolower(char *str)
 {
 	int in;
 

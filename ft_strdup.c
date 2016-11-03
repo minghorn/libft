@@ -22,11 +22,15 @@ char	*ft_strdup(char *src)
 		i++;
 	ptr = (char*)malloc(i * sizeof(char) + 1);
 	i = 0;
-	while (src[i] != '\0')
+	if (ptr != NULL)
 	{
-		ptr[i] = src[i];
-		i++;
+		while (src[i] != '\0')
+		{
+			ptr[i] = src[i];
+			i++;
+		}
+		ptr[i] = '\0';
+		return (ptr);
 	}
-	ptr[i] = '\0';
-	return (ptr);
+	return (NULL);
 }

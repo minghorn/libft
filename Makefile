@@ -13,7 +13,7 @@
 NAME	= libft.a
 CC		= gcc
 CFLAGS	= -Wall -Wextra -Werror -I "libft.h"
-FILES	= ft_islower.c ft_isupper.c ft_isalpha.c ft_putchar.c ft_putstr.c ft_putnum.c test.c
+FILES	= ft_islower.c ft_isupper.c ft_isalpha.c ft_putchar.c ft_putstr.c ft_putnbr.c ft_atoi.c ft_strstr.c ft_swap.c ft_strcmp.c ft_isdigit.c ft_strdup.c ft_strlen.c ft_isprint.c ft_strncmp.c
 
 OBJS = $(addprefix build/, $(FILES:.c=.o))
 
@@ -35,3 +35,5 @@ fclean: clean
 	rm -f $(NAME)
 
 re: fclean all
+
+.phony: clean fclean re

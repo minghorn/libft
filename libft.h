@@ -13,11 +13,15 @@
 #ifndef LIBFT_H
 	#define LIBFT_H
 	#include <unistd.h>
+	#include <stdlib.h>
+	#include <string.h>
 
 	int		ft_isupper(int c);
 	int		ft_islower(int c);
 	int		ft_isalpha(int c);
-	void	ft_putnum(int n);
+	void	ft_putnbr(int n);
 	void	ft_putchar(char c);
 	void	ft_putstr(char *str);
+	int		ft_strcmp(const char *s1, const char *s2);
+	int		ft_strncmp(const char *s1, const char *s2, size_t n);
 #endif
