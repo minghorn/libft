@@ -10,17 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_isprint(char *str)
+int		ft_isprint(int c)
 {
-	int i;
-
-	i = 0;
-	while (str[i] != '\0')
-	{
-		if (str[i] > 0x1F || str[i] == 0x7F)
-			i++;
-		else
-			return (0);
-	}
-	return (1);
+	if (c > 0x1F && c != 0x7F)
+		return (1);
+	return (0);
 }

@@ -14,7 +14,9 @@
 
 int	ft_isalpha(int c)
 {
-	if (ft_islower(c) != 0 || ft_isupper(c) != 0)
+	if (c >= 'a' && c <= 'z')
+		return (1);
+	else if (c >= 'A' && c <= 'Z')
 		return (1);
 	return (0);
 }
