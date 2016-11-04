@@ -16,13 +16,13 @@
 	#include <stdlib.h>
 	#include <string.h>
 
-	int		ft_isupper(int c);
-	int		ft_islower(int c);
 	int		ft_isalpha(int c);
+	int		ft_isdigit(int c);
 	void	ft_putnbr(int n);
 	void	ft_putchar(char c);
 	void	ft_putstr(char *str);
 	int		ft_strcmp(const char *s1, const char *s2);
 	int		ft_strncmp(const char *s1, const char *s2, size_t n);
 	int		ft_atoi(char *str);
+	int		ft_isdigit(int c);
 #endif
