@@ -10,46 +10,38 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-static int	is_ok(char c, int str_num, int *ok_ptr)
-{
-	int count;
-
-	count = 0;
-	if (str_num > 0)
-		return (1);
-	if (c == '\n' || c == '\t' || c == '\v' || c == '\r' || c == '\f')
-		return (0);
-	if ((c == '-' || c == '+') && *ok_ptr == 0)
-	{
-		*ok_ptr += 1;
-		return (0);
-	}
-	if (c == ' ')
-		return (0);
-	return (1);
-}
+#define ISSPACE(c) \
+	(c == '\n' || c == '\t' || c == '\v' || c == '\r' || c == '\f' || c == ' ')
+#define ISDIGIT(n) \
+	(n >= '0' && n <= '9')
+#define ISSIGN(s) \
+	(s == '-' || s == '+')
 
 int			ft_atoi(char *str)
 {
 	int str_num;
 	int index;
 	int is_neg;
-	int ok;
-	int *ok_ptr;
+	int	sign_ct;
 
 	str_num = 0;
-	ok = 0;
-	ok_ptr = &ok;
 	index = 0;
 	is_neg = 1;
+	sign_ct = 0;
 	while (str[index] != '\0')
 	{
-		if (!(str[index] < '0') && !(str[index] > '9'))
+		if (ISDIGIT(str[index]))
 			str_num = str_num * 10 + (str[index] - '0');
-		else if (is_ok(str[index], str_num, ok_ptr) != 0)
-			return (str_num * is_neg);
-		else if (str[index] == '-')
+		else if (str[index] == '-' && sign_ct == 0)
 			is_neg = -1;
+		else if (ISSIGN(str[index]) && sign_ct != 0)
+			return (str_num * is_neg);
+		else if (!ISSPACE(str[index]))
+			return (str_num * is_neg);
+		if (ISSIGN(str[index]) && !(ISDIGIT(str[index + 1])))
+			return (str_num * is_neg);
+		else if (ISSIGN(str[index]))
+			sign_ct++;
 		index++;
 	}
 	return (str_num * is_neg);
