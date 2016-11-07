@@ -6,14 +6,14 @@
 /*   By: mhorn <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/08/15 13:11:03 by mhorn             #+#    #+#             */
-/*   Updated: 2016/08/15 18:00:07 by mhorn            ###   ########.fr       */
+/*   Updated: 2016/11/07 12:08:25 by mhorn            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 static int	matching(char *str, char *to_find, int index)
 {
-	int count;
-	int is_matching;
+	int		count;
+	int		is_matching;
 
 	count = 0;
 	is_matching = -1;
@@ -27,7 +27,7 @@ static int	matching(char *str, char *to_find, int index)
 	return (1);
 }
 
-char	*ft_strstr(char *str, char *to_find)
+char		*ft_strstr(char *str, char *to_find)
 {
 	char	*ptr;
 	int		index;

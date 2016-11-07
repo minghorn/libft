@@ -1,11 +1,23 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_memccpy.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mhorn <marvin@42.fr>                       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2016/11/07 12:11:35 by mhorn             #+#    #+#             */
+/*   Updated: 2016/11/07 12:13:03 by mhorn            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
 {
-	unsigned char *dstm;
-	unsigned char *srcm;
-	unsigned char ch;
-	size_t in;
+	unsigned char	*dstm;
+	unsigned char	*srcm;
+	unsigned char	ch;
+	size_t			in;
 
 	ch = (unsigned char)c;
 	dstm = (unsigned char *)dst;
@@ -18,5 +30,5 @@ void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
 		dstm[in] = srcm[in];
 		in++;
 	}
-	return ((unsigned char *) NULL);
+	return ((unsigned char *)NULL);
 }

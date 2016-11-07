@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlowcase.c                                    :+:      :+:    :+:   */
+/*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mhorn <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/08/16 20:14:29 by mhorn             #+#    #+#             */
-/*   Updated: 2016/08/16 20:14:33 by mhorn            ###   ########.fr       */
+/*   Created: 2016/11/07 12:27:10 by mhorn             #+#    #+#             */
+/*   Updated: 2016/11/07 12:28:26 by mhorn            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,9 +29,9 @@ static char	*create_array(int size, char *str)
 	return (str);
 }
 
-char	*ft_tolower(char *str)
+char		*ft_tolower(char *str)
 {
-	int in;
+	int		in;
 
 	in = 0;
 	while (str[in] != '\0')
