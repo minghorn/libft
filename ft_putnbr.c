@@ -1,41 +1,57 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mhorn <marvin@42.fr>                       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2016/08/15 09:20:41 by mhorn             #+#    #+#             */
+/*   Updated: 2016/11/07 12:15:07 by mhorn            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
-static int	nbr_len(int n)
+void	print_num(char *n, int index)
 {
-	int len;
-
-	len = 0;
-	if (n < 0)
+	while (index > -1)
 	{
-		len++;
-		n = n * -1;
+		ft_putchar(n[index]);
+		index--;
 	}
-	while (n > 0)
-	{
-		n = n / 10;
-		len++;
-	}
-	return (len);
 }
 
-void ft_putnbr(int n)
+char	*clear_array(char *num)
 {
-	int len;
-	char *arr;
-	int in;
+	int i;
 
-	in = 0;
-	len = nbr_len(n);
-	if (n < 0)
+	i = 0;
+	while (i < 11)
 	{
-		arr[in] = '-';
-		n = n * -1;
-		in++;
+		num[i] = '\0';
+		i++;
 	}
-	while (n > 0)
+	return (num);
+}
+
+void	ft_putnbr(int nb)
+{
+	char	num[11];
+	int		index;
+	int		is_neg;
+
+	index = 0;
+	is_neg = 1;
+	clear_array(num);
+	if (nb < 0)
+		is_neg = -1;
+	while (nb != 0)
 	{
-		arr[in] = n % 10;
-		n = n / 10;
+		num[index] = (nb % 10) * is_neg + '0';
+		nb = nb / 10;
+		index++;
 	}
-	ft_putstr(arr);
+	if (is_neg == -1)
+		num[index] = '-';
+	print_num(num, index);
 }
