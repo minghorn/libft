@@ -6,7 +6,7 @@
 /*   By: mhorn <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/07 12:11:35 by mhorn             #+#    #+#             */
-/*   Updated: 2016/11/07 12:13:03 by mhorn            ###   ########.fr       */
+/*   Updated: 2016/11/07 13:09:21 by mhorn            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
 	while (in < n)
 	{
 		if (srcm[in] == ch)
-			return (&dstm[in]);
+			return (&dstm[(in + 1)]);
 		dstm[in] = srcm[in];
 		in++;
 	}
