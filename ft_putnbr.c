@@ -1,38 +1,41 @@
 #include "libft.h"
 
-static void print_num(int n)
+static int	nbr_len(int n)
 {
+	int len;
+
+	len = 0;
 	if (n < 0)
 	{
-		ft_putchar('-');
+		len++;
 		n = n * -1;
 	}
-	else if (n == 0)
-		ft_putchar('0');
 	while (n > 0)
 	{
-		ft_putchar((n % 10 + '0'));
 		n = n / 10;
+		len++;
 	}
-	ft_putchar('\n');
+	return (len);
 }
 
 void ft_putnbr(int n)
 {
-	int neg = 1;
-	int num = 0;
+	int len;
+	char *arr;
+	int in;
 
-	if (n == -2147483648)
-		ft_putstr("-2147483648");
-	else if (n < 0)
+	in = 0;
+	len = nbr_len(n);
+	if (n < 0)
 	{
-		neg = -1;
+		arr[in] = '-';
 		n = n * -1;
+		in++;
 	}
 	while (n > 0)
 	{
-		num = (num * 10) + (n % 10);
+		arr[in] = n % 10;
 		n = n / 10;
 	}
-	print_num(num * neg);
+	ft_putstr(arr);
 }

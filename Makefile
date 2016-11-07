@@ -13,7 +13,7 @@
 NAME	= libft.a
 CC		= gcc
 CFLAGS	= -Wall -Wextra -Werror -I "libft.h"
-FILES	= ft_isalpha.c ft_putchar.c ft_putstr.c ft_putnbr.c ft_atoi.c ft_strstr.c ft_swap.c ft_strcmp.c ft_isdigit.c ft_strdup.c ft_strlen.c ft_isprint.c ft_strncmp.c
+FILES	= ft_isalpha.c ft_putchar.c ft_putstr.c ft_atoi.c ft_strstr.c ft_swap.c ft_strcmp.c ft_isdigit.c ft_strdup.c ft_strlen.c ft_isprint.c ft_strncmp.c ft_memset.c ft_bzero.c ft_memcpy.c ft_memccpy.c
 
 OBJS = $(addprefix build/, $(FILES:.c=.o))
 
