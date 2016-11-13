@@ -10,26 +10,12 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-static char	*create_array(int size, char *str)
+int	ft_toupper(int c)
 {
-	char	arr[size + 1];
-	int		in;
+	unsigned char ch;
 
-	in = 0;
-	while (str[in] != '\0')
-	{
-		if (str[in] >= 97 && str[in] <= 122)
-			arr[in] = str[in] - 32;
-		else
-			arr[in] = str[in];
-		in++;
-	}
-	arr[in] = '\0';
-	str = arr;
-	return (str);
-}
-
-int			ft_toupper(int l)
-{
-	return (create_array(in, str));
+	ch = (unsigned char)c;
+	if (ch >= 141 && ch <= 172)
+		return (ch - 32);
+	return (ch);
 }
