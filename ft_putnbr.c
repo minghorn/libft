@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-void	print_num(char *n, int index)
+static void	print_num(char *n, int index)
 {
 	while (index > -1)
 	{
@@ -21,7 +21,7 @@ void	print_num(char *n, int index)
 	}
 }
 
-char	*clear_array(char *num)
+static char	*clear_array(char *num)
 {
 	int i;
 

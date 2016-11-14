@@ -19,8 +19,29 @@ int  main(void)
 	printf("%d\n", atoi("\t\v\f\r\n \f- \f\t\n\r    06050"));
 	printf("%d\n", ft_atoi("+23-4"));
 	printf("%d\n", atoi("+23-4"));
-*/
+
 	printf("%s\n", ft_memccpy(buff1, src, '\200', 21));
 	printf("%s\n", memccpy(buff2, src, '\200', 21));
+
+	char	*s1 = "MZIRIBMZIRIBMZE123";
+	char	*s2 = "MZIRIBMZE";
+	size_t	max = strlen(s2);
+
+	char	*i1 = strnstr(s1, s2, max);
+	char	*i2 = ft_strnstr(s1, s2, max);
+	printf("%s/\n", i1);
+	printf("%s/\n", i2);
+*/
+	int i = -1;
+	while (i < 530)
+	{
+		if (ft_isalnum(i) != isalnum(i))
+		{
+			printf("%d\n%d\n", ft_isalnum(i), isalnum(i));
+			break ;
+		}
+		i++;
+	}
+	printf("%s\n", "SUCCESS");
 	return (0);
 }
