@@ -10,33 +10,12 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-static char	*create_array(int size, char *str)
+int	ft_tolower(int c)
 {
-	char	arr[size + 1];
-	int		in;
+	unsigned char ch;
 
-	in = 0;
-	while (str[in] != '\0')
-	{
-		if (str[in] >= 65 && str[in] <= 90)
-			arr[in] = str[in] + 32;
-		else
-			arr[in] = str[in];
-		in++;
-	}
-	arr[in] = '\0';
-	str = arr;
-	return (str);
-}
-
-char		*ft_tolower(char *str)
-{
-	int		in;
-
-	in = 0;
-	while (str[in] != '\0')
-	{
-		in++;
-	}
-	return (create_array(in, str));
+	ch = (unsigned char)c;
+	if (ch >= 65 && ch <= 90)
+		return (ch + 32);
+	return (ch);
 }
