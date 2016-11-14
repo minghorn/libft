@@ -12,15 +12,10 @@
 
 int		ft_isprint(int c)
 {
-	if ((c >= 40  && c <= 47) || (c >= 50 && c <= 57) || (c >= 60 && c <= 77))
-		return (1);
-	else if ((c >= 100 && c <= 107) || (c >= 110 && c <= 117))
-		return (1);
-	else if ((c >= 120 && c <= 127) || (c >= 130 && c <= 137))
-		return (1);
-	else if ((c >= 140 && c <= 147) || (c >= 150 && c <= 157))
-		return (1);
-	else if ((c >= 160 && c <= 167) || (c >= 170 && c < 177))
+/*	unsigned char x;
+
+	x = (unsigned char)c; */
+	if (c >= 32 && c < 127)
 		return (1);
 	return (0);
 }

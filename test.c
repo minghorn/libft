@@ -32,16 +32,15 @@ int  main(void)
 	printf("%s/\n", i1);
 	printf("%s/\n", i2);
 */
-	int i = -1;
+	int i = -100;
 	while (i < 530)
 	{
-		if (ft_isalnum(i) != isalnum(i))
+		if (ft_tolower(i) != tolower(i))
 		{
-			printf("%d\n%d\n", ft_isalnum(i), isalnum(i));
+			printf("%d:\n%d\n%d\n", i, ft_isprint(i), isprint(i));
 			break ;
 		}
 		i++;
 	}
-	printf("%s\n", "SUCCESS");
 	return (0);
 }
