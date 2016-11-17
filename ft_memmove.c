@@ -6,7 +6,7 @@
 /*   By: mhorn <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/07 13:27:16 by mhorn             #+#    #+#             */
-/*   Updated: 2016/11/07 13:32:19 by mhorn            ###   ########.fr       */
+/*   Updated: 2016/11/17 13:16:31 by mhorn            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,10 +43,9 @@ static void	cpy_s(unsigned char *dstm, unsigned char *srcm, size_t len, int d)
 			i--;
 		}
 	}
-
 }
 
-void	*ft_memmove(void *dst, const void *src, size_t len)
+void		*ft_memmove(void *dst, const void *src, size_t len)
 {
 	unsigned char	*dstm;
 	unsigned char	*srcm;

@@ -6,7 +6,7 @@
 /*   By: mhorn <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/08/15 09:20:41 by mhorn             #+#    #+#             */
-/*   Updated: 2016/11/07 12:15:07 by mhorn            ###   ########.fr       */
+/*   Updated: 2016/11/17 13:16:59 by mhorn            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ static char	*clear_array(char *num)
 	return (num);
 }
 
-void	ft_putnbr(int nb)
+void		ft_putnbr(int nb)
 {
 	char	num[11];
 	int		index;
