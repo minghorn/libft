@@ -1,5 +1,5 @@
 # Untracked Files
 /libft-unit-test/
 a.out
-
-
+/build/
+libft.a
