@@ -6,15 +6,12 @@
 /*   By: mhorn <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/08/16 21:17:56 by mhorn             #+#    #+#             */
-/*   Updated: 2016/08/16 21:23:39 by mhorn            ###   ########.fr       */
+/*   Updated: 2016/11/17 13:23:36 by mhorn            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int		ft_isprint(int c)
 {
-/*	unsigned char x;
-
-	x = (unsigned char)c; */
 	if (c >= 32 && c < 127)
 		return (1);
 	return (0);
