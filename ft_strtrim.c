@@ -6,13 +6,24 @@
 /*   By: mhorn <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/17 13:21:04 by mhorn             #+#    #+#             */
-/*   Updated: 2016/11/17 13:21:05 by mhorn            ###   ########.fr       */
+/*   Updated: 2016/11/17 13:43:10 by mhorn            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdio.h>
 #define WSP(c) (c == ' ' || c == '\t' || c == '\n')
+
+int		[]find_indices(char const *s)
+{
+	int	indices[2];
+	int	i;
+
+	i = 0;
+	while (s[i] != '\0')
+	{
+	}
+}
 
 char	*ft_strtrim(char const *s)
 {
