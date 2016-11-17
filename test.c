@@ -31,7 +31,7 @@ int  main(void)
 	char	*i2 = ft_strnstr(s1, s2, max);
 	printf("%s/\n", i1);
 	printf("%s/\n", i2);
-*/
+
 	int i = -100;
 	while (i < 530)
 	{
@@ -42,5 +42,9 @@ int  main(void)
 		}
 		i++;
 	}
+*/
+	char *s = "\t   hello string abc \n \t";
+
+	printf("%s\n", ft_strtrim(s));
 	return (0);
 }
