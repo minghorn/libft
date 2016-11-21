@@ -43,8 +43,9 @@ int  main(void)
 		i++;
 	}
 */
-	char *s = "\t   hello string abc \n \t";
-
+	char *s = "   \t  \n\n \t\t  \n\n\nHello \t  Please\n Trim me !";
+	char *s2 = "      ";
+	printf("%s\n", ft_strtrim(s2));
 	printf("%s\n", ft_strtrim(s));
 	return (0);
 }
