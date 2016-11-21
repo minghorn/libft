@@ -11,48 +11,55 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 #define WSP(c) (c == ' ' || c == '\t' || c == '\n')
 
-int		[]find_indices(char const *s)
+static int	*find_indices(char const *s)
 {
-	int	indices[2];
+	int	*indices;
 	int	i;
 
 	i = 0;
-	while (s[i] != '\0')
+	indices = (int *)malloc(sizeof(int) * 2);
+	if (indices != NULL)
 	{
+		while (WSP(s[i]) && s[i] != '\0')
+			i++;
+		if (s[i] == '\0')
+		{
+			indices[0] = 0;
+			indices[1] = 0;
+			return (indices);
+		}
+		else
+			indices[0] = i;
+		i = ft_strlen(s) - 1;
+		while (WSP(s[i]) && i > 0)
+			i--;
+		indices[1] = i;
 	}
+	return (indices);
 }
 
-char	*ft_strtrim(char const *s)
+char		*ft_strtrim(char const *s)
 {
 	char	*str;
-	int		beg;
-	int		end;
+	int		*ind;
 	int		i;
+	int		j;
 
+	ind = find_indices(s);
 	str = (char *)malloc(sizeof(char) * (ft_strlen(s) + 1));
 	if (str != NULL)
 	{
-		//printf("%s\n", "malloc worked");
-		beg = 0;
-		end = ft_strlen(s) - 1;
-		//printf("%d\n", end);
-		while (s[beg] != '\0' && WSP(s[beg]))
-			beg++;
-		while (end > -1 && WSP(s[end]))
-			end--;
-		//printf("beginning: %d end: %d\n", beg, end);
 		i = 0;
-		while (beg <= end)
+		j = ind[0];
+		while (j <= ind[1] && ind[0] != ind[1])
 		{
-			str[i] = s[beg];
-			beg++;
+			str[i] = s[j];
+			j++;
 			i++;
 		}
-		str[beg] = '\0';
-		//printf("%s\n", str);
+		str[i] = '\0';
 		return (str);
 	}
 	return ((char *)s);
