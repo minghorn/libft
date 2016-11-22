@@ -42,10 +42,23 @@ int  main(void)
 		}
 		i++;
 	}
-*/
+
 	char *s = "   \t  \n\n \t\t  \n\n\nHello \t  Please\n Trim me !";
 	char *s2 = "      ";
 	printf("%s\n", ft_strtrim(s2));
 	printf("%s\n", ft_strtrim(s));
+	*/
+	char *s = "hello***my*name**is***ming";
+	char *s2 = "****";
+	char *s3 = "hello";
+/*	char **buff = (char **)malloc(sizeof(char *) * (ft_strlen(s) + 1));
+	buff = ft_strsplit(s, '*');
+	for (int i = 0; i < 5; i++)
+		printf("%s ", buff[i]);
+	printf("\n%s\n", ft_strsplit(s2, '*')[0]);
+	printf("%s\n", ft_strsplit(s3, '*')[0]);*/
+	ft_strsplit(s, '*');
+	ft_strsplit(s2, '*');
+	ft_strsplit(s3, '*');
 	return (0);
 }
