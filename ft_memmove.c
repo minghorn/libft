@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
 static int	overlapping(unsigned char *dstm, unsigned char *srcm)
 {
@@ -25,7 +26,7 @@ static void	cpy_s(unsigned char *dstm, unsigned char *srcm, size_t len, int d)
 {
 	size_t i;
 
-	if (d > 0)
+	if (d >= 0)
 	{
 		i = 0;
 		while (i < len)
@@ -33,6 +34,7 @@ static void	cpy_s(unsigned char *dstm, unsigned char *srcm, size_t len, int d)
 			dstm[i] = srcm[i];
 			i++;
 		}
+		dstm[i] = '\0';
 	}
 	else if (d < 0)
 	{
@@ -42,7 +44,9 @@ static void	cpy_s(unsigned char *dstm, unsigned char *srcm, size_t len, int d)
 			dstm[i] = srcm[i];
 			i--;
 		}
+		dstm[i] = '\0';
 	}
+	printf("%s\n", dstm);
 }
 
 void		*ft_memmove(void *dst, const void *src, size_t len)

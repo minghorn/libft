@@ -4,7 +4,7 @@
 
 int  main(void)
 {
-	char src[] = "string with\200inside !";
+/*	char src[] = "string with\200inside !";
 	char buff1[] = "abcdefghijklmnopqrstuvwxyz";
 	char buff2[] = "abcdefghijklmnopqrstuvwxyz";
 
@@ -12,7 +12,17 @@ int  main(void)
 	ft_memccpy(buff2, src, '\200', 21);
 
 	if (!memcmp(buff1, buff2, 21))
-		printf("%s\n", "failed");
+		printf("%s\n", "failed"); */
+
+	char *src = "this is a good nyancat !\r\n";
+	char dst1[0xF0];
+	char dst2[0xF0];
+	int size = ft_strlen(src);
+	memmove(dst1, src, size);
+	ft_memmove(dst2, src, size);
+	printf("%s\n", dst1);
+	printf("%s\n", dst2);
+
 /*	ft_putnbr(ft_isalpha('B'));
 	printf("%d\n", isalpha('B'));
 	printf("%d\n", ft_atoi("\t\v\f\r\n \f- \f\t\n\r    06050"));
@@ -47,18 +57,31 @@ int  main(void)
 	char *s2 = "      ";
 	printf("%s\n", ft_strtrim(s2));
 	printf("%s\n", ft_strtrim(s));
-	*/
+	
 	char *s = "hello***my*name**is***ming";
 	char *s2 = "****";
-	char *s3 = "hello";
-/*	char **buff = (char **)malloc(sizeof(char *) * (ft_strlen(s) + 1));
+	char *s3 = "      split       this for   me  !       ";
+	char **buff = (char **)malloc(sizeof(char *) * (ft_strlen(s) + 1));
+	char **buff2 = (char **)malloc(sizeof(char *) * (ft_strlen(s3) + 1));
 	buff = ft_strsplit(s, '*');
+	buff2 = ft_strsplit(s3, ' ');
 	for (int i = 0; i < 5; i++)
 		printf("%s ", buff[i]);
 	printf("\n%s\n", ft_strsplit(s2, '*')[0]);
-	printf("%s\n", ft_strsplit(s3, '*')[0]);*/
+	int j = 0;
+	while (buff2[j] != '\0')
+	{
+		printf("%s, ", buff2[j]);
+		j++;
+	}
+	printf("\n");
 	ft_strsplit(s, '*');
 	ft_strsplit(s2, '*');
-	ft_strsplit(s3, '*');
+	ft_strsplit(s3, '*'); */
+
+/*	printf("%s\n", ft_itoa(-0));
+	printf("%s\n", ft_itoa(-623));
+	printf("%s\n", ft_itoa(156));
+*/
 	return (0);
 }
