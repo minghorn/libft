@@ -48,16 +48,22 @@ char	**ft_strsplit(char const *s, char c)
 	char	**arr;
 	int		*i;
 	int		j;
+	int		word_ct;
 
 	i = malloc(sizeof(int) * 1);
+	word_ct = word_count(s, c);
 	*i = 0;
 	j = 0;
-	arr = (char **)malloc(sizeof(char *) * (word_count(s, c)));
+	arr = (char **)malloc(sizeof(char *) * (word_ct + 1));
 //	printf("%d\n", word_count(s, c));
-	while (s[*i] != '\0' && arr != NULL && i != NULL)
+	if (arr != NULL && i != NULL)
 	{
-		arr[j] = next_word(i, s, c);
-		j++;
+		while (s[*i] != '\0' && j < word_ct)
+		{
+			arr[j] = next_word(i, s, c);
+			j++;
+		}
+		arr[j] = NULL;
 	}
 //	printf("\n");
 	return (arr);
