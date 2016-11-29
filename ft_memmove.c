@@ -24,12 +24,12 @@ static int	overlapping(unsigned char *dstm, unsigned char *srcm)
 
 static void	cpy_s(unsigned char *dstm, unsigned char *srcm, size_t len, int d)
 {
-	size_t i;
+	int		 i;
 
-	if (d >= 0)
+	if (d > 0)
 	{
 		i = 0;
-		while (i < len)
+		while (i < (int)len)
 		{
 			dstm[i] = srcm[i];
 			i++;
@@ -38,15 +38,14 @@ static void	cpy_s(unsigned char *dstm, unsigned char *srcm, size_t len, int d)
 	}
 	else if (d < 0)
 	{
-		i = len;
-		while (i > 0)
+		i = (int)len - 1;
+		dstm[i + 1] = '\0';
+		while (i > -1)
 		{
 			dstm[i] = srcm[i];
 			i--;
 		}
-		dstm[i] = '\0';
 	}
-	printf("%s\n", dstm);
 }
 
 void		*ft_memmove(void *dst, const void *src, size_t len)

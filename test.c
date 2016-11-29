@@ -14,14 +14,18 @@ int  main(void)
 	if (!memcmp(buff1, buff2, 21))
 		printf("%s\n", "failed"); */
 
-	char *src = "this is a good nyancat !\r\n";
+	char *src = "thanks to @apellicc for this test !\r\n";
 	char dst1[0xF0];
 	char dst2[0xF0];
 	int size = ft_strlen(src);
 	memmove(dst1, src, size);
 	ft_memmove(dst2, src, size);
-	printf("%s\n", dst1);
-	printf("%s\n", dst2);
+	printf("memmove: %s", dst1);
+	printf("ft_memmove: %s", dst2);
+	char	*r1 = memmove("", "" - 1, 0);
+	char	*r2 = ft_memmove("", "" - 1, 0);
+	printf("memmove: %s", r1);
+	printf("ft_memmove: %s", r2);
 
 /*	ft_putnbr(ft_isalpha('B'));
 	printf("%d\n", isalpha('B'));
