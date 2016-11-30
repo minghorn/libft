@@ -6,12 +6,17 @@
 /*   By: mhorn <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/07 13:27:16 by mhorn             #+#    #+#             */
-/*   Updated: 2016/11/17 13:16:31 by mhorn            ###   ########.fr       */
+/*   Updated: 2016/11/30 15:02:36 by mhorn            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdio.h>
+
+/*
+** Check in which direction to copy in, if srcm < dstm copy right to left
+** if srcm > dstm copy left to right otherwise they are equal and do not copy
+*/
 
 static int	overlapping(unsigned char *dstm, unsigned char *srcm)
 {
@@ -24,22 +29,14 @@ static int	overlapping(unsigned char *dstm, unsigned char *srcm)
 
 static void	cpy_s(unsigned char *dstm, unsigned char *srcm, size_t len, int d)
 {
-	int		 i;
+	int		i;
 
 	if (d > 0)
-	{
-		i = 0;
-		while (i < (int)len)
-		{
-			dstm[i] = srcm[i];
-			i++;
-		}
-		dstm[i] = '\0';
-	}
+		ft_memcpy(dstm, srcm, len);
 	else if (d < 0)
 	{
 		i = (int)len - 1;
-		dstm[i + 1] = '\0';
+		dstm[(int)len] = '\0';
 		while (i > -1)
 		{
 			dstm[i] = srcm[i];
@@ -55,6 +52,7 @@ void		*ft_memmove(void *dst, const void *src, size_t len)
 
 	dstm = (unsigned char *)dst;
 	srcm = (unsigned char *)src;
-	cpy_s(dstm, srcm, len, overlapping(dstm, srcm));
+	if (len)
+		cpy_s(dstm, srcm, len, overlapping(dstm, srcm));
 	return (dst);
 }

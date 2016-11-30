@@ -1,5 +1,16 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strsplit.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mhorn <marvin@42.fr>                       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2016/11/30 13:39:04 by mhorn             #+#    #+#             */
+/*   Updated: 2016/11/30 14:52:34 by mhorn            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
-#include <stdio.h>
 
 static int	word_count(char const *s, char c)
 {
@@ -12,7 +23,6 @@ static int	word_count(char const *s, char c)
 	{
 		if ((s[i + 1] == c || s[i + 1] == '\0') && s[i] != c)
 		{
-//			printf("s[i]: %c s[i + 1]: %c\n", s[i], s[i+1]);
 			count++;
 		}
 		i++;
@@ -32,28 +42,32 @@ static char	*next_word(int *i, char const *s, char c)
 	return (ft_strsub(s, (unsigned int)j, (size_t)(*i - j)));
 }
 
-char	**ft_strsplit(char const *s, char c)
+char		**ft_strsplit(char const *s, char c)
 {
 	char	**arr;
 	int		*i;
 	int		j;
 	int		word_ct;
 
-	i = malloc(sizeof(int) * 1);
-	word_ct = word_count(s, c);
-	*i = 0;
-	j = 0;
-	arr = (char **)malloc(sizeof(char *) * (word_ct + 1));
-//	printf("%d\n", word_count(s, c));
-	if (arr != NULL && i != NULL)
+	if (s)
 	{
-		while (s[*i] != '\0' && j < word_ct)
+		i = malloc(sizeof(int) * 1);
+		word_ct = word_count(s, c);
+		*i = 0;
+		j = 0;
+		arr = (char **)malloc(sizeof(char *) * (word_ct + 1));
+		if (arr != NULL)
 		{
-			arr[j] = next_word(i, s, c);
-			j++;
+			while (s[*i] != '\0' && j < word_ct)
+			{
+				arr[j] = next_word(i, s, c);
+				j++;
+			}
+			arr[j] = NULL;
 		}
-		arr[j] = NULL;
+		else if (arr == NULL)
+			return (NULL);
+		return (arr);
 	}
-//	printf("\n");
-	return (arr);
+	return (NULL);
 }

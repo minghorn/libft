@@ -6,7 +6,7 @@
 /*   By: mhorn <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/17 13:21:04 by mhorn             #+#    #+#             */
-/*   Updated: 2016/11/17 13:43:10 by mhorn            ###   ########.fr       */
+/*   Updated: 2016/11/30 14:50:50 by mhorn            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,8 @@ static int	*find_indices(char const *s)
 			i--;
 		indices[1] = i;
 	}
+	else if (!indices)
+		return (NULL);
 	return (indices);
 }
 
@@ -47,22 +49,27 @@ char		*ft_strtrim(char const *s)
 	int		i;
 	int		j;
 
-	ind = find_indices(s);
-	str = (char *)malloc(sizeof(char) * ((ind[1] - ind[0]) + 2));
-	if (str != NULL)
+	if (s)
 	{
-		i = 0;
-		j = ind[0];
-		while (j <= ind[1] && ind[0] != ind[1])
+		ind = find_indices(s);
+		str = NULL;
+		if (ind != NULL)
+			str = (char *)malloc(sizeof(char) * ((ind[1] - ind[0]) + 2));
+		if (str != NULL)
 		{
-			str[i] = s[j];
-			j++;
-			i++;
+			i = 0;
+			j = ind[0];
+			while (j <= ind[1] && ind[0] != ind[1])
+			{
+				str[i] = s[j];
+				j++;
+				i++;
+			}
+			str[i] = '\0';
+			return (str);
 		}
-		str[i] = '\0';
-		return (str);
+		else if (str == NULL)
+			return (str);
 	}
-	else if (str == NULL)
-		return (str);
 	return ((char *)s);
 }
