@@ -22,25 +22,14 @@ static int	word_count(char const *s, char c)
 
 static char	*next_word(int *i, char const *s, char c)
 {
-	char	*word;
 	int		j;
 
-	word = (char *)malloc(sizeof(char) * (ft_strlen(s) + 1));
-	if (word != NULL)
-	{
-		j = 0;
-		while (s[*i] != c && s[*i] != '\0')
-		{
-			word[j] = s[*i];
-			*i = *i + 1;
-			j++;
-		}
-		word[j] = '\0';
-		while (s[*i] == c && s[*i] != '\0')
-			*i = *i + 1;
-	}
-//	printf("%s ", word);
-	return (word);
+	while (s[*i] == c && s[*i] != '\0')
+		*i = *i + 1;
+	j = *i;
+	while (s[*i] != c && s[*i] != '\0')
+		*i = *i + 1;
+	return (ft_strsub(s, (unsigned int)j, (size_t)(*i - j)));
 }
 
 char	**ft_strsplit(char const *s, char c)

@@ -20,7 +20,8 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 
 	j = ft_strlen(dst);
 	i = 0;
-	while (i < (size - j) &&  size != 0 && src[i] != '\0')
+	printf("\nstrlen: %d size: %zu\n", j, size);
+	while (i < (size - j - 1) && size != 0 && src[i] != '\0')
 	{
 		dst[j] = src[i];
 		j++;
