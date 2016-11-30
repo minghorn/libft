@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mhorn <marvin@42.fr>                       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2016/11/30 14:02:28 by mhorn             #+#    #+#             */
+/*   Updated: 2016/11/30 14:12:26 by mhorn            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 static char		char_int(int n)
@@ -12,7 +24,7 @@ static char		char_int(int n)
 
 static int		num_digits(int n)
 {
-	int 	neg;
+	int		neg;
 	int		digits;
 
 	neg = 0;
@@ -27,7 +39,7 @@ static int		num_digits(int n)
 	}
 	else if (n == 0)
 		return (1);
-	while(n > 0)
+	while (n > 0)
 	{
 		digits++;
 		n = n / 10;

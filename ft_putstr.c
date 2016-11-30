@@ -6,7 +6,7 @@
 /*   By: mhorn <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/08/15 09:07:55 by mhorn             #+#    #+#             */
-/*   Updated: 2016/08/15 16:08:27 by mhorn            ###   ########.fr       */
+/*   Updated: 2016/11/30 14:53:19 by mhorn            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,12 @@ void	ft_putstr(const char *s)
 	int index;
 
 	index = 0;
-	while (s[index] != '\0')
+	if (s)
 	{
-		ft_putchar(s[index]);
-		index++;
+		while (s[index] != '\0')
+		{
+			ft_putchar(s[index]);
+			index++;
+		}
 	}
 }
