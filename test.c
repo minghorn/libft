@@ -12,7 +12,7 @@ int  main(void)
 	ft_memccpy(buff2, src, '\200', 21);
 
 	if (!memcmp(buff1, buff2, 21))
-		printf("%s\n", "failed"); */
+		printf("%s\n", "failed");
 
 	char *src = "thanks to @apellicc for this test !\r\n";
 	char dst1[0xF0];
@@ -26,7 +26,7 @@ int  main(void)
 	char	*r2 = ft_memmove("", "" - 1, 0);
 	printf("memmove: %s", r1);
 	printf("ft_memmove: %s", r2);
-
+*/
 /*	ft_putnbr(ft_isalpha('B'));
 	printf("%d\n", isalpha('B'));
 	printf("%d\n", ft_atoi("\t\v\f\r\n \f- \f\t\n\r    06050"));
@@ -83,9 +83,8 @@ int  main(void)
 	ft_strsplit(s2, '*');
 	ft_strsplit(s3, '*'); */
 
-/*	printf("%s\n", ft_itoa(-0));
+	printf("%s\n", ft_itoa(-0));
 	printf("%s\n", ft_itoa(-623));
 	printf("%s\n", ft_itoa(156));
-*/
 	return (0);
 }

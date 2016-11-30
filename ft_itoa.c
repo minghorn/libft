@@ -1,5 +1,4 @@
 #include "libft.h"
-#include <stdio.h>
 
 static char		char_int(int n)
 {
@@ -45,7 +44,6 @@ char			*ft_itoa(int n)
 
 	len = num_digits(n);
 	neg = -1;
-//	printf("%d %d\n", n, len);
 	num = (char *)malloc(sizeof(char) * (len + 1));
 	if (num != NULL)
 	{
@@ -58,7 +56,6 @@ char			*ft_itoa(int n)
 				i++;
 				n = n * -1;
 				neg = 0;
-				len--;
 			}
 			else
 			{
@@ -66,14 +63,14 @@ char			*ft_itoa(int n)
 				return (num);
 			}
 		}
-		i = len;
+		i = len - 1;
 		while (i > neg)
 		{
 			num[i] = char_int(n % 10);
 			n = n / 10;
 			i--;
 		}
-		num[len + 1] = '\0';
+		num[len] = '\0';
 	}
 	return (num);
 }

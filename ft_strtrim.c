@@ -48,7 +48,7 @@ char		*ft_strtrim(char const *s)
 	int		j;
 
 	ind = find_indices(s);
-	str = (char *)malloc(sizeof(char) * (ft_strlen(s) + 1));
+	str = (char *)malloc(sizeof(char) * ((ind[1] - ind[0]) + 2));
 	if (str != NULL)
 	{
 		i = 0;
@@ -62,5 +62,7 @@ char		*ft_strtrim(char const *s)
 		str[i] = '\0';
 		return (str);
 	}
+	else if (str == NULL)
+		return (str);
 	return ((char *)s);
 }
