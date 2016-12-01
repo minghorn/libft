@@ -6,9 +6,11 @@
 /*   By: mhorn <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/08/15 13:11:03 by mhorn             #+#    #+#             */
-/*   Updated: 2016/11/07 12:08:25 by mhorn            ###   ########.fr       */
+/*   Updated: 2016/11/30 15:09:04 by mhorn            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 static int	matching(char *str, char *to_find, int index)
 {
