@@ -6,7 +6,7 @@
 /*   By: mhorn <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/17 13:21:04 by mhorn             #+#    #+#             */
-/*   Updated: 2016/11/30 14:50:50 by mhorn            ###   ########.fr       */
+/*   Updated: 2016/11/30 16:15:38 by mhorn            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,16 +60,10 @@ char		*ft_strtrim(char const *s)
 			i = 0;
 			j = ind[0];
 			while (j <= ind[1] && ind[0] != ind[1])
-			{
-				str[i] = s[j];
-				j++;
-				i++;
-			}
+				str[i++] = s[j++];
 			str[i] = '\0';
-			return (str);
 		}
-		else if (str == NULL)
-			return (str);
+		return (str);
 	}
 	return ((char *)s);
 }

@@ -6,7 +6,7 @@
 /*   By: mhorn <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/30 13:39:04 by mhorn             #+#    #+#             */
-/*   Updated: 2016/11/30 14:52:34 by mhorn            ###   ########.fr       */
+/*   Updated: 2016/11/30 16:11:58 by mhorn            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,8 +65,6 @@ char		**ft_strsplit(char const *s, char c)
 			}
 			arr[j] = NULL;
 		}
-		else if (arr == NULL)
-			return (NULL);
 		return (arr);
 	}
 	return (NULL);

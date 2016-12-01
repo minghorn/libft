@@ -6,12 +6,11 @@
 /*   By: mhorn <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/07 13:27:16 by mhorn             #+#    #+#             */
-/*   Updated: 2016/11/30 15:02:36 by mhorn            ###   ########.fr       */
+/*   Updated: 2016/11/30 15:06:32 by mhorn            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
 /*
 ** Check in which direction to copy in, if srcm < dstm copy right to left

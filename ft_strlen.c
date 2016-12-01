@@ -6,9 +6,11 @@
 /*   By: mhorn <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/08/12 15:40:44 by mhorn             #+#    #+#             */
-/*   Updated: 2016/08/16 19:50:08 by mhorn            ###   ########.fr       */
+/*   Updated: 2016/11/30 15:14:32 by mhorn            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int		ft_strlen(const char *str)
 {
@@ -16,8 +18,6 @@ int		ft_strlen(const char *str)
 
 	chars = 0;
 	while (str[chars] != '\0')
-	{
 		chars++;
-	}
 	return (chars);
 }
