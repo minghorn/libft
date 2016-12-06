@@ -12,12 +12,12 @@
 
 #include "libft.h"
 
-static void	print_num(int n[12])
+static void	print_num(int n[12], int len)
 {
 	int		i;
 
 	i = 0;
-	while (n[i] != '\0')
+	while (i < len)
 	{
 		ft_putchar(n[i] + '0');
 		i++;
@@ -53,5 +53,5 @@ void		ft_putnbr(int n)
 		num[0] = '-';
 	else
 		num[0] = n;
-    print_num(num);
+    print_num(num, len);
 }

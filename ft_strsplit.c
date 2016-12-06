@@ -34,6 +34,8 @@ static char	*next_word(int *i, char const *s, char c)
 {
 	int		j;
 
+	if (!s)
+		return (NULL);
 	while (s[*i] == c && s[*i] != '\0')
 		*i = *i + 1;
 	j = *i;
@@ -49,23 +51,23 @@ char		**ft_strsplit(char const *s, char c)
 	int		j;
 	int		word_ct;
 
-	if (s)
+	if (!s)
+		return (NULL);
+	i = malloc(sizeof(int) * 1);
+	word_ct = word_count(s, c);
+	if (!i)
+		return (NULL);
+	*i = 0;
+	j = 0;
+	arr = (char **)malloc(sizeof(char *) * (word_ct + 1));
+	if (arr != NULL)
 	{
-		i = malloc(sizeof(int) * 1);
-		word_ct = word_count(s, c);
-		*i = 0;
-		j = 0;
-		arr = (char **)malloc(sizeof(char *) * (word_ct + 1));
-		if (arr != NULL)
+		while (s[*i] != '\0' && j < word_ct)
 		{
-			while (s[*i] != '\0' && j < word_ct)
-			{
-				arr[j] = next_word(i, s, c);
-				j++;
-			}
-			arr[j] = NULL;
+			arr[j] = next_word(i, s, c);
+			j++;
 		}
-		return (arr);
+		arr[j] = NULL;
 	}
-	return (NULL);
+	return (arr);
 }
