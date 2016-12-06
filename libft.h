@@ -77,5 +77,6 @@ void			ft_putendl_fd(char const *s, int fd);
 void			ft_putnbr_fd(int n, int fd);
 char			ft_itoc(int n);
 int				ft_ctdigits(int n);
+char			*ft_strdup(const char *s1);
 //t_list	*ft_lstnew(void const *content, size_t content_size);
 #endif
