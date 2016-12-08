@@ -4,3 +4,4 @@ a.out
 /build/
 libft.a
 test.txt
+.DS_Store
