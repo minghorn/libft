@@ -2,6 +2,23 @@
 #include <ctype.h>
 #include <stdio.h>
 #include <fcntl.h>
+t_list			*lstnew(void *d, size_t s) {
+	t_list *ret = malloc(sizeof(t_list));
+	if (!ret)	
+		return (NULL);
+
+	ret->next = NULL;
+	ret->content = d;
+	ret->content_size = s;
+	return (ret);
+}
+
+t_list *		lstmap_f(t_list *m)
+{
+	t_list *	r = lstnew("OK !", 5);
+	(void)m;
+	return (r);
+}
 
 int  main(void)
 {
@@ -119,7 +136,7 @@ int  main(void)
 		printf("Failed: r1: %zu, r2: %zu\n", r1, r2);
 	//printf("%s\n", ft_itoa(-2147483648));
 	printf("s1: %s\ns2: %s\n", s1, s2); */
-	char *data = "hello, i'm a data";
+/*	char *data = "hello, i'm a data";
 	t_list *l = ft_lstnew(data, strlen(data) + 1);
 
 	if (!strcmp(data, l->content))
@@ -129,6 +146,34 @@ int  main(void)
 		printf("success\n");
 	}
 	else
-		printf("failed\n");
+		printf("failed\n"); */
+
+/*	t_list *l = lstnew(strdup(" 1 2 3 "), 8);
+	t_list *ret;
+
+	l->next = lstnew(strdup("ss"), 3);
+	l->next->next = lstnew(strdup("-_-"), 4);
+	ret = ft_lstmap(l, lstmap_f);
+
+	while (ret->next != NULL)
+	{
+		printf("%s\n", ret->content);
+		ret = ret->next;
+	}
+	printf("%s\n", ret->content);
+
+	while (l->next)
+	{
+		printf("%s\n", l->content);
+		l = l->next;
+	}
+	printf("%s\n", l->content); */
+/*
+	if (!strcmp(ret->content, "OK !") && !strcmp(ret->next->content, "OK !") && !strcmp(ret->next->next->content, "OK !") && !strcmp(l->content, " 1 2 3 ") && !strcmp(l->next->content, "ss") && !strcmp(l->next->next->content, "-_-"))
+		printf("works!\n");
+	else
+		printf("failed\n"); */
+
+	printf("ft_atoi: %d\natoi: %d\n", ft_atoi("1-2"), atoi("1-2"));
 	return (0);
 }

@@ -10,6 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 #define SP(c) (c == '\n'||c == '\t'||c == '\v'||c == '\r'||c == '\f'||c == ' ')
 #define ISDIGIT(n) (n >= '0' && n <= '9')
 #define ISSIGN(s) (s == '-' || s == '+')
@@ -29,13 +30,15 @@ int			ft_atoi(char *str)
 	{
 		if (ISDIGIT(str[index]))
 			str_num = str_num * 10 + (str[index] - '0');
-		else if (str[index] == '-' && sign_ct == 0)
+		else if (str[index] == '-' && sign_ct == 0 && str_num == 0)
 			is_neg = -1;
 		else if (ISSIGN(str[index]) && sign_ct != 0)
 			return (str_num * is_neg);
-		else if (!SP(str[index]))
+		else if (SP(str[index]) && str_num != 0)
 			return (str_num * is_neg);
-		if (ISSIGN(str[index]) && !(ISDIGIT(str[index + 1])))
+		else if (!SP(str[index]) && !(ISSIGN(str[index])))
+			return (str_num * is_neg);
+		if (ISSIGN(str[index]) && (!(ISDIGIT(str[index + 1])) || str_num != 0))
 			return (str_num * is_neg);
 		else if (ISSIGN(str[index]))
 			sign_ct++;
