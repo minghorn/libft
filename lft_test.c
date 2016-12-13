@@ -2,6 +2,13 @@
 #include <ctype.h>
 #include <stdio.h>
 #include <fcntl.h>
+
+void  mt_test_strstr(char *s1, char *s2)
+{
+	if (!strcmp(ft_strstr(s1, s2), strstr(s1, s2)))
+		printf("ft: %s\n, str: %s\n", ft_strstr(s1, s2), strstr(s1, s2));
+}
+
 t_list			*lstnew(void *d, size_t s) {
 	t_list *ret = malloc(sizeof(t_list));
 	if (!ret)	
@@ -174,6 +181,25 @@ int  main(void)
 	else
 		printf("failed\n"); */
 
-	printf("ft_atoi: %d\natoi: %d\n", ft_atoi("1-2"), atoi("1-2"));
+//	printf("ft_atoi: %d\natoi: %d\n", ft_atoi("1-2"), atoi("1-2"));
+/*	char	buf[11];
+
+	bzero(buf, 11);
+	strcpy(buf, "un deux 9");
+	buf[9] = '6';
+	printf("%s\n", ft_strnstr(buf, "9682", 10)); */
+	static char	buf[] = "Ceci n'est pas une pipe.";
+	static char	buf2[] = "ozarabozaraboze";
+
+	mt_test_strstr(buf, "une");
+	mt_test_strstr(buf, "C");
+	mt_test_strstr(buf, ".");
+	mt_test_strstr(buf, "");
+	mt_test_strstr(buf, "aaaaa");
+	mt_test_strstr(buf2, "ozaraboze");
+	mt_test_strstr(buf, "BWAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
+	mt_test_strstr("", "");
+	mt_test_strstr(buf, "une");
+	mt_test_strstr("J'ai fait pipapipapou en LV2", "pipapou");
 	return (0);
 }
