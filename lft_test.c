@@ -6,7 +6,7 @@
 void  mt_test_strstr(char *s1, char *s2)
 {
 	if (!strcmp(ft_strstr(s1, s2), strstr(s1, s2)))
-		printf("ft: %s\n, str: %s\n", ft_strstr(s1, s2), strstr(s1, s2));
+		printf("find: %s\nft: %s\nstr: %s\n", s2, ft_strstr(s1, s2), strstr(s1, s2));
 }
 
 t_list			*lstnew(void *d, size_t s) {
@@ -188,7 +188,7 @@ int  main(void)
 	strcpy(buf, "un deux 9");
 	buf[9] = '6';
 	printf("%s\n", ft_strnstr(buf, "9682", 10)); */
-	static char	buf[] = "Ceci n'est pas une pipe.";
+/*	static char	buf[] = "Ceci n'est pas une pipe.";
 	static char	buf2[] = "ozarabozaraboze";
 
 	mt_test_strstr(buf, "une");
@@ -200,6 +200,8 @@ int  main(void)
 	mt_test_strstr(buf, "BWAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
 	mt_test_strstr("", "");
 	mt_test_strstr(buf, "une");
-	mt_test_strstr("J'ai fait pipapipapou en LV2", "pipapou");
+	mt_test_strstr("J'ai fait pipapipapou en LV2", "pipapou"); */
+
+	ft_putnbr(01-11230010203-562147483647-2147483648);
 	return (0);
 }
