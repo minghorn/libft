@@ -24,6 +24,8 @@ static int	match(const char *big, const char *little, size_t len, size_t i)
 		i++;
 		j++;
 	}
+	if (j < ft_strlen(little))
+		return (0);
 	return (1);
 }
 

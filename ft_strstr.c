@@ -15,21 +15,23 @@
 static int	matching(char *str, char *to_find, int index)
 {
 	int		count;
-	int		is_matching;
 
 	count = 0;
-	is_matching = -1;
+	if (ft_strlen(str) < ft_strlen(to_find))
+		return (0);
 	while (str[index] != '\0' && to_find[count] != '\0')
 	{
 		if (str[index] != to_find[count])
-			return (is_matching);
+			return (0);
 		index++;
 		count++;
 	}
+	if (count != ft_strlen(to_find))
+		return (0);
 	return (1);
 }
 
-char		*ft_strstr(char *str, char *to_find)
+char		*ft_strstr(const char *str, const char *to_find)
 {
 	char	*ptr;
 	int		index;
@@ -42,16 +44,16 @@ char		*ft_strstr(char *str, char *to_find)
 	{
 		if (str[index] == to_find[0])
 		{
-			matched = matching(str, to_find, index);
-			if (matched != -1)
+			matched = matching((char *)str, (char *)to_find, index);
+			if (matched)
 			{
-				ptr = &str[index];
+				ptr = (char *)&str[index];
 				return (ptr);
 			}
 		}
 		index++;
 	}
 	if (to_find[0] == '\0')
-		return (str);
+		return ((char *)str);
 	return (ptr);
 }

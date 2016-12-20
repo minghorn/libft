@@ -3,6 +3,30 @@
 #include <stdio.h>
 #include <fcntl.h>
 
+void  mt_test_strstr(char *s1, char *s2)
+{
+	if (!strcmp(ft_strstr(s1, s2), strstr(s1, s2)))
+		printf("find: %s\nft: %s\nstr: %s\n", s2, ft_strstr(s1, s2), strstr(s1, s2));
+}
+
+t_list			*lstnew(void *d, size_t s) {
+	t_list *ret = malloc(sizeof(t_list));
+	if (!ret)	
+		return (NULL);
+
+	ret->next = NULL;
+	ret->content = d;
+	ret->content_size = s;
+	return (ret);
+}
+
+t_list *		lstmap_f(t_list *m)
+{
+	t_list *	r = lstnew("OK !", 5);
+	(void)m;
+	return (r);
+}
+
 int  main(void)
 {
 /*	char src[] = "string with\200inside !";
@@ -119,7 +143,7 @@ int  main(void)
 		printf("Failed: r1: %zu, r2: %zu\n", r1, r2);
 	//printf("%s\n", ft_itoa(-2147483648));
 	printf("s1: %s\ns2: %s\n", s1, s2); */
-	char *data = "hello, i'm a data";
+/*	char *data = "hello, i'm a data";
 	t_list *l = ft_lstnew(data, strlen(data) + 1);
 
 	if (!strcmp(data, l->content))
@@ -129,6 +153,75 @@ int  main(void)
 		printf("success\n");
 	}
 	else
-		printf("failed\n");
+		printf("failed\n"); */
+
+/*	t_list *l = lstnew(strdup(" 1 2 3 "), 8);
+	t_list *ret;
+
+	l->next = lstnew(strdup("ss"), 3);
+	l->next->next = lstnew(strdup("-_-"), 4);
+	ret = ft_lstmap(l, lstmap_f);
+
+	while (ret->next != NULL)
+	{
+		printf("%s\n", ret->content);
+		ret = ret->next;
+	}
+	printf("%s\n", ret->content);
+
+	while (l->next)
+	{
+		printf("%s\n", l->content);
+		l = l->next;
+	}
+	printf("%s\n", l->content); */
+/*
+	if (!strcmp(ret->content, "OK !") && !strcmp(ret->next->content, "OK !") && !strcmp(ret->next->next->content, "OK !") && !strcmp(l->content, " 1 2 3 ") && !strcmp(l->next->content, "ss") && !strcmp(l->next->next->content, "-_-"))
+		printf("works!\n");
+	else
+		printf("failed\n"); */
+
+//	printf("ft_atoi: %d\natoi: %d\n", ft_atoi("1-2"), atoi("1-2"));
+/*	char	buf[11];
+
+	bzero(buf, 11);
+	strcpy(buf, "un deux 9");
+	buf[9] = '6';
+	printf("%s\n", ft_strnstr(buf, "9682", 10)); */
+/*	static char	buf[] = "Ceci n'est pas une pipe.";
+	static char	buf2[] = "ozarabozaraboze";
+
+	mt_test_strstr(buf, "une");
+	mt_test_strstr(buf, "C");
+	mt_test_strstr(buf, ".");
+	mt_test_strstr(buf, "");
+	mt_test_strstr(buf, "aaaaa");
+	mt_test_strstr(buf2, "ozaraboze");
+	mt_test_strstr(buf, "BWAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
+	mt_test_strstr("", "");
+	mt_test_strstr(buf, "une");
+	mt_test_strstr("J'ai fait pipapipapou en LV2", "pipapou"); */
+	int		out;
+	int		p[2];
+	char	buf[100];
+
+	out = dup(1);
+	pipe(p);
+	dup2(p[1], 1);
+	ft_putnbr(0);
+	ft_putnbr(1);
+	ft_putnbr(-1);
+	ft_putnbr(12300);
+	ft_putnbr(10203);
+	ft_putnbr(-56);
+	ft_putnbr(2147483647);
+	ft_putnbr(-2147483648);
+	dup2(out, 1);
+	buf[read(p[0], buf, 100)] = 0;
+	close(p[0]);
+	close(p[1]);
+	close(out);
+//	ft_putnbr(01-11230010203-562147483647-2147483648);
+	printf("%d\n", strcmp(buf, "01-11230010203-562147483647-2147483648"));
 	return (0);
 }
