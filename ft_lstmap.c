@@ -6,7 +6,7 @@
 /*   By: mhorn <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/07 16:23:08 by mhorn             #+#    #+#             */
-/*   Updated: 2016/12/07 17:09:50 by mhorn            ###   ########.fr       */
+/*   Updated: 2016/12/20 14:33:08 by mhorn            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ t_list	*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
 	current = malloc(sizeof(t_list));
 	if (!current || !head)
 		return (NULL);
-	head = f(lst); 
+	head = f(lst);
 	current = head;
 	while (lst->next != NULL)
 	{

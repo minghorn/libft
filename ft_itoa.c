@@ -6,7 +6,7 @@
 /*   By: mhorn <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/30 14:02:28 by mhorn             #+#    #+#             */
-/*   Updated: 2016/11/30 14:12:26 by mhorn            ###   ########.fr       */
+/*   Updated: 2016/12/20 14:45:12 by mhorn            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static void		make_char(char *num, int n, int len)
 {
-	int 	i;
+	int		i;
 	int		neg;
 
 	i = 0;
@@ -45,10 +45,10 @@ char			*ft_itoa(int n)
 	num = (char *)malloc(sizeof(char) * (len + 1));
 	if (num != NULL)
 	{
-		 if (n != -2147483648) 
+		if (n != -2147483648)
 			make_char(num, n, len);
-		 else
-		 	return (ft_strdup("-2147483648"));
+		else
+			return (ft_strdup("-2147483648"));
 	}
 	return (num);
 }

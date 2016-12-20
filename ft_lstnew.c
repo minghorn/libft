@@ -6,7 +6,7 @@
 /*   By: mhorn <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/30 14:09:55 by mhorn             #+#    #+#             */
-/*   Updated: 2016/11/30 14:16:46 by mhorn            ###   ########.fr       */
+/*   Updated: 2016/12/20 14:33:49 by mhorn            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ t_list	*ft_lstnew(void const *content, size_t content_size)
 
 	link = (t_list *)malloc(sizeof(t_list));
 	if (!link)
-	  return (NULL);
+		return (NULL);
 	if (content == NULL)
 	{
 		link->content = NULL;
