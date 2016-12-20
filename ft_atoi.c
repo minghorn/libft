@@ -15,7 +15,7 @@
 #define ISDIGIT(n) (n >= '0' && n <= '9')
 #define ISSIGN(s) (s == '-' || s == '+')
 
-int			ft_atoi(char *str)
+int			ft_atoi(const char *str)
 {
 	int str_num;
 	int index;
