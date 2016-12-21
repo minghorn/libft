@@ -201,7 +201,7 @@ int  main(void)
 	mt_test_strstr("", "");
 	mt_test_strstr(buf, "une");
 	mt_test_strstr("J'ai fait pipapipapou en LV2", "pipapou"); */
-	int		out;
+/*	int		out;
 	int		p[2];
 	char	buf[100];
 
@@ -222,6 +222,8 @@ int  main(void)
 	close(p[1]);
 	close(out);
 //	ft_putnbr(01-11230010203-562147483647-2147483648);
-	printf("%d\n", strcmp(buf, "01-11230010203-562147483647-2147483648"));
+	printf("%d\n", strcmp(buf, "01-11230010203-562147483647-2147483648")); */
+	ft_atoi("-123");
+	ft_atoi("123");
 	return (0);
 }
