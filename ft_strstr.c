@@ -26,7 +26,7 @@ static int	matching(char *str, char *to_find, int index)
 		index++;
 		count++;
 	}
-	if (count != ft_strlen(to_find))
+	if (count != (int)ft_strlen(to_find))
 		return (0);
 	return (1);
 }

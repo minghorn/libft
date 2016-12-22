@@ -21,23 +21,32 @@ int				ft_atoi(const char *str)
 {
 	long long	temp;
 	int			neg;
+	int			sign_ct;
 
 	neg = 0;
+	sign_ct = 0;
 	temp = 0;
 	while (*str != '\0')
 	{
 		if (*str != '\0' && ISSIGN(*str) && temp == 0)
+		{
+			if (sign_ct)
+				break;
 			neg = *str++ == '-';
+			sign_ct++;
+		}
 		else if (ISDIGIT(*str))
 			temp = temp * 10 + (*str++ - '0');
+		else if (SP(*str) && !sign_ct && temp == 0)
+			str++;
 		else if (SP(*str++) && temp != 0)
 			break;
 		else
 			break;
 	}
-	if (temp >= INT_MIN && temp <= INT_MAX)
-		return (temp * neg);
-	return (-1);
+	if (neg)
+		temp = temp * -1;
+	return ((int)temp);
 }
 /* int			ft_atoi(const char *str)
 {
