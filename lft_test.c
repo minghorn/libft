@@ -223,7 +223,8 @@ int  main(void)
 	close(out);
 //	ft_putnbr(01-11230010203-562147483647-2147483648);
 	printf("%d\n", strcmp(buf, "01-11230010203-562147483647-2147483648")); */
-	ft_atoi("-123");
-	ft_atoi("123");
+//	ft_atoi("-123");
+//	ft_atoi("123");
+	ft_strnequ("abcde", "abdfe", 2);
 	return (0);
 }
