@@ -27,6 +27,45 @@ t_list *		lstmap_f(t_list *m)
 	return (r);
 }
 
+int				uf_test_memmove(void)
+{
+    char		str[] = "memmove can be very useful......";
+    char		str2[] = "memmove can be very useful......";
+    char		str3[] = "memmove can be very useful......";
+    char		str4[] = "memmove can be very useful......";
+    
+    char		s1[101], t1[101];
+    char		s2[101], t2[101];
+    size_t		i, j;
+    
+    i = 0;
+    while (i < 512)
+    {
+        j = 0;
+        while (j < 100)
+        {
+            s1[j] = (char)rand();
+            s2[j] = (char)rand();
+            j++;
+        }
+        s1[100] = 0;    s2[100] = 0;
+        memcpy(t1, s1, sizeof(s1));
+        memcpy(t2, s2, sizeof(s2));
+        if (strcmp(memmove(str + 10, str + 5, 10), ft_memmove(str2 + 10, str2 + 5, 10)) != 0)
+            printf("memmove: %s\nft_memmove: %s\n", memmove(str + 10, str + 5, 10), ft_memmove(str2 + 10, str2 + 5, 10));
+        if (strcmp(memmove(str3 + 5, str3 + 10, 10), ft_memmove(str4 + 5, str4 + 10, 10)) != 0)
+            printf("memmove: %s\nft_memmove: %s\n", memmove(str3 + 5, str3 + 10, 10), ft_memmove(str4 + 5, str4 + 10, 10));
+        if (strcmp(memmove(s1, s2, 2), ft_memmove(t1, t2, 2)) != 0)
+            printf("memmove: %s\nft_memmove: %s\n", memmove(s1, s2, 2), ft_memmove(t1, t2, 2));
+        if (strcmp(memmove(s1, s1 + 25, 30), ft_memmove(t1, t1 + 25, 30)) != 0)
+            printf("memmove: %s\nft_memmove: %s\n", memmove(s1, s1 + 25, 30), ft_memmove(t1, t1 + 25, 30));
+        if (strcmp(memmove(s1 + 30, s1, 40), ft_memmove(t1 + 30, t1, 40)) != 0)
+            printf("memmove: %s\nft_memmove: %s\n", memmove(s1 + 30, s1, 40), ft_memmove(t1 + 30, t1, 40));
+        ++i;
+    }
+    return (1);
+}
+
 int  main(void)
 {
 /*	char src[] = "string with\200inside !";
@@ -225,6 +264,7 @@ int  main(void)
 	printf("%d\n", strcmp(buf, "01-11230010203-562147483647-2147483648")); */
 //	ft_atoi("-123");
 //	ft_atoi("123");
-	ft_strnequ("abcde", "abdfe", 2);
+//	ft_strnequ("abcde", "abdfe", 2);
+	uf_test_memmove();
 	return (0);
 }
