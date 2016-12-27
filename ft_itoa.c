@@ -21,8 +21,7 @@ static void		make_char(char *num, int n, int len)
 	neg = -1;
 	if (n < 0)
 	{
-		num[i] = '-';
-		i++;
+		num[i++] = '-';
 		n = n * -1;
 		neg = 0;
 	}
