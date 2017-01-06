@@ -6,7 +6,7 @@
 #    By: mhorn <marvin@42.fr>                       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/10/31 12:04:02 by mhorn             #+#    #+#              #
-#    Updated: 2016/12/07 17:10:11 by mhorn            ###   ########.fr        #
+#    Updated: 2017/01/06 15:41:30 by mhorn            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ OBJS = $(addprefix build/, $(FILES:.c=.o))
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	ar rc $(NAME) $(OBJS)
+	ar -rc $(NAME) $(OBJS)
 
 build/%.o: ./%.c | build
 	$(CC) $(CFLAGS) -o $@ -c $^
@@ -32,8 +32,8 @@ clean:
 	rm -rf build/
 
 fclean: clean
-	rm -f $(NAME)
+	rm -rf $(NAME)
 
 re: fclean all
 
-.PHONY: all clean
+.PHONY: re fclean clean
